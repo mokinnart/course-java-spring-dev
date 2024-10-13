@@ -1,16 +1,14 @@
 package ru.mokinnart.skillbox.mod1.util;
 
-import jakarta.annotation.PostConstruct;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import ru.mokinnart.skillbox.mod1.model.Contact;
-import ru.mokinnart.skillbox.mod1.service.ContactService;
 import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
 
-@Component
+import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
+import ru.mokinnart.skillbox.mod1.model.Contact;
+import ru.mokinnart.skillbox.mod1.service.ContactService;
+
+// @Component
 @RequiredArgsConstructor
 public class ConsoleInputHandler {
     private final ContactService contactService;
@@ -45,8 +43,8 @@ public class ConsoleInputHandler {
     }
     private void addContact() {
         System.out.println("Введите контакт (Ф. И. О.; номер телефона; адрес электронной почты):");
-        String input = scanner.nextLine();
-        String[] parts = input.split(";");
+        var input = scanner.nextLine();
+        var parts = input.split(";");
         if (parts.length == 3) {
             contactService.addContact(new Contact(parts[0].trim(), parts[1].trim(), parts[2].trim()));
             System.out.println("Контакт добавлен.");
@@ -55,7 +53,7 @@ public class ConsoleInputHandler {
         }
     }
     private void viewContacts() {
-        List<Contact> contacts = contactService.getContacts();
+        var contacts = contactService.getContacts();
         if (contacts.isEmpty()) {
             System.out.println("Нет контактов.");
         } else {
@@ -66,7 +64,7 @@ public class ConsoleInputHandler {
     }
     private void deleteContact() {
         System.out.println("Введите email контакта для удаления:");
-        String email = scanner.nextLine();
+        var email = scanner.nextLine();
         contactService.deleteContactByEmail(email);
         System.out.println("Контакт удалён.");
     }

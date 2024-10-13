@@ -1,4 +1,7 @@
 spring:
+  shell:
+      interactive:
+        enabled: true
   application:
     name: Module 1
   datasource:
@@ -8,4 +11,7 @@ spring:
     password: postgres
 contact:
   file:
-    path: src/main/resources/contacts.txt
+      path: src/main/resources/contacts.txt
+student:
+  initializer:
+    enabled: true
