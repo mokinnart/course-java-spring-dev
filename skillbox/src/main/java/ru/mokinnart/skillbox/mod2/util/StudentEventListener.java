@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import ru.mokinnart.skillbox.mod2.model.event.StudentCreatedEvent;
 import ru.mokinnart.skillbox.mod2.model.event.StudentRemovedEvent;
 
-@Component
+// @Component
 public class StudentEventListener {
     @EventListener
     public void handleStudentCreated(StudentCreatedEvent event) {

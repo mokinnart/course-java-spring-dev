@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import ru.mokinnart.skillbox.mod2.model.Student;
 
-@Service
+// @Service
 public class StudentService {
     private final Map<Long, Student> students = new HashMap<>();
     private long currentId = 1;

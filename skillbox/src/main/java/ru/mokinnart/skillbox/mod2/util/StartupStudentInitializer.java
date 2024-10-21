@@ -7,9 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import ru.mokinnart.skillbox.mod2.service.StudentService;
 
-@Component
+// @Component
 @RequiredArgsConstructor
-@ConfigurationProperties(prefix = "student.initializer")
+// @ConfigurationProperties(prefix = "student.initializer")
 public class StartupStudentInitializer {
     @Setter
     private boolean enabled;

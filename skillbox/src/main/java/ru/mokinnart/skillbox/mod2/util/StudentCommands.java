@@ -9,7 +9,7 @@ import ru.mokinnart.skillbox.mod2.model.event.StudentCreatedEvent;
 import ru.mokinnart.skillbox.mod2.model.event.StudentRemovedEvent;
 import ru.mokinnart.skillbox.mod2.service.StudentService;
 
-@ShellComponent
+// @ShellComponent
 @RequiredArgsConstructor
 public class StudentCommands {
     private final ApplicationEventPublisher publisher;
