@@ -1,7 +1,6 @@
 package ru.mokinnart.skillbox.mod2.util;
 
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
 import lombok.RequiredArgsConstructor;

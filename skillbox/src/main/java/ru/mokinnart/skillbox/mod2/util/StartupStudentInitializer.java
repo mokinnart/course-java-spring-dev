@@ -1,6 +1,4 @@
 package ru.mokinnart.skillbox.mod2.util;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

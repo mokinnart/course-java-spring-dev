@@ -1,6 +1,5 @@
 package ru.mokinnart.skillbox.mod2.util;
 import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Component;
 
 import ru.mokinnart.skillbox.mod2.model.event.StudentCreatedEvent;
 import ru.mokinnart.skillbox.mod2.model.event.StudentRemovedEvent;

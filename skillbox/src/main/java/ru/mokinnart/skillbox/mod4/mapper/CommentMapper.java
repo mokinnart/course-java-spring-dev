@@ -1,0 +1,13 @@
+package ru.mokinnart.skillbox.mod4.mapper;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import ru.mokinnart.skillbox.mod4.dto.CommentDTO;
+import ru.mokinnart.skillbox.mod4.model.Comment;
+
+@Mapper(componentModel = "spring")
+public interface CommentMapper {
+    @Mapping(target = "author", source = "author.username")
+    CommentDTO toDto(Comment comment);
+    @Mapping(target = "author.username", source = "author")
+    Comment toEntity(CommentDTO commentDTO);
+}
