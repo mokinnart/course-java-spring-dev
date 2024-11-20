@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import ru.mokinnart.skillbox.mod4.CheckOwnership;
+import ru.mokinnart.skillbox.mod4.CheckNewsOwnership;
 import ru.mokinnart.skillbox.mod4.dto.NewsDTO;
 import ru.mokinnart.skillbox.mod4.service.NewsService;
 
@@ -31,7 +31,7 @@ public class NewsController {
     public ResponseEntity<Page<NewsDTO>> filterNews(
             @RequestParam(required = false) String category,
             @RequestParam(required = false) String author,
-            Pageable pageable) {
+              Pageable pageable) {
         return ResponseEntity.ok(newsService.filterNews(category, author, pageable));
     }
     @GetMapping("/{newsId}")
@@ -43,12 +43,12 @@ public class NewsController {
         return ResponseEntity.ok(newsService.createNews(newsDTO));
     }
     @PutMapping("/{newsId}")
-    @CheckOwnership
+    @CheckNewsOwnership
     public ResponseEntity<NewsDTO> updateNews(@PathVariable Long newsId, @Valid @RequestBody NewsDTO newsDTO) {
         return ResponseEntity.ok(newsService.updateNews(newsId, newsDTO));
     }
     @DeleteMapping("/{newsId}")
-    @CheckOwnership
+    @CheckNewsOwnership
     public ResponseEntity<Void> deleteNews(@PathVariable Long newsId) {
         newsService.deleteNews(newsId);
         return ResponseEntity.noContent().build();

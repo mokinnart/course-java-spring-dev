@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import ru.mokinnart.skillbox.mod4.CheckOwnership;
+import ru.mokinnart.skillbox.mod4.CheckNewsOwnership;
 import ru.mokinnart.skillbox.mod4.dto.CommentDTO;
 import ru.mokinnart.skillbox.mod4.service.CommentService;
 
@@ -31,12 +31,12 @@ public class CommentController {
         return ResponseEntity.ok(commentService.createComment(newsId, commentDTO));
     }
     @PutMapping("/{commentId}")
-    @CheckOwnership
+    @CheckNewsOwnership
     public ResponseEntity<CommentDTO> updateComment(@PathVariable Long commentId, @Valid @RequestBody CommentDTO commentDTO) {
         return ResponseEntity.ok(commentService.updateComment(commentId, commentDTO));
     }
     @DeleteMapping("/{commentId}")
-    @CheckOwnership
+    @CheckNewsOwnership
     public ResponseEntity<Void> deleteComment(@PathVariable Long commentId) {
         commentService.deleteComment(commentId);
         return ResponseEntity.noContent().build();
